@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create s3 bucket
+      amazon.aws.s3_bucket:
+        name: mys3buckets112
+        state: present
+        aws_access_key: "{{ ec2_access_key }}"
+        aws_secret_key: "{{ ec2_secret_key }}"
+        region: ap-south-1

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present
